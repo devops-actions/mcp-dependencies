@@ -1,0 +1,14 @@
+// JSONC settings.json with inline comments (VS Code style)
+{
+  // General VS Code settings
+  "editor.formatOnSave": true,
+  "mcp": {
+    "servers": {
+      "global-playwright": {
+        "type": "stdio",
+        "command": "npx",
+        "args": ["-y", "@microsoft/mcp-server-playwright"]
+      }
+    }
+  }
+}

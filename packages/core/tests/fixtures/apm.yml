@@ -1,0 +1,14 @@
+dependencies:
+  mcp:
+    io.github.github/github-mcp-server:
+      type: http
+      url: "https://api.githubcopilot.com/mcp"
+    my-stdio-server:
+      type: stdio
+      command: node
+      args: ["./dist/server.js"]
+  apm:
+    - anthropics/skills/skills/frontend-design
+    - github/awesome-copilot/plugins/context-engineering
+    - microsoft/apm-sample-package#v1.0.0
+    - owner/simple-package
