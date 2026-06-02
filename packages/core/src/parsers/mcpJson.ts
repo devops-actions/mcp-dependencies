@@ -1,4 +1,5 @@
 import * as fs from "fs";
+import * as path from "path";
 import { parse as parseJsonc } from "jsonc-parser";
 import type { McpServer, ScanDiagnostic } from "../types.js";
 
@@ -163,15 +164,6 @@ export function parseSettingsJsonForMcp(
   const errors: import("jsonc-parser").ParseError[] = [];
   const parsed = parseJsonc(raw, errors) as Record<string, unknown>;
 
-  if (errors.length > 0) {
-    diagnostics.push({
-      level: "warning",
-      file: filePath,
-      kind: "jsonc-parse-warning",
-      message: `JSONC parse issues in settings.json (${errors.length} error(s)); mcp entries may be incomplete.`,
-    });
-  }
-
   if (!parsed || typeof parsed !== "object") return [];
 
   // Try nested format: { "mcp": { "servers": { ... } } }
@@ -183,6 +175,18 @@ export function parseSettingsJsonForMcp(
 
   const servers = nestedServers ?? flatServers;
   if (!servers) return [];
+
+  // Only report parse errors for dedicated mcp.json files, not settings.json
+  // (settings.json is a user config with lots of unrelated content)
+  const fileName = path.basename(filePath);
+  if (errors.length > 0 && fileName !== "settings.json") {
+    diagnostics.push({
+      level: "warning",
+      file: filePath,
+      kind: "jsonc-parse-warning",
+      message: `JSONC parse issues in settings.json (${errors.length} error(s)); mcp entries may be incomplete.`,
+    });
+  }
 
   return parseServerMap(servers, "user", filePath, diagnostics);
 }

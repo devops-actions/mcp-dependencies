@@ -10,6 +10,7 @@
   "categories": ["Other"],
   "keywords": ["mcp", "apm", "dependencies", "dependency graph"],
   "activationEvents": [
+    "onStartupFinished",
     "workspaceContains:.vscode/mcp.json",
     "workspaceContains:apm.yml",
     "workspaceContains:apm.yaml"
@@ -32,8 +33,7 @@
       "explorer": [
         {
           "id": "mcpDependencies",
-          "name": "MCP & APM Dependencies",
-          "when": "workspaceHasFile:.vscode/mcp.json || workspaceHasFile:apm.yml"
+          "name": "MCP & APM Dependencies"
         }
       ]
     },
@@ -59,6 +59,7 @@
   "devDependencies": {
     "@types/node": "^20.0.0",
     "@types/vscode": "^1.85.0",
+    "esbuild": "^0.25.0",
     "rimraf": "^5.0.0",
     "typescript": "^5.5.0"
   }
