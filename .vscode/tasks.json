@@ -1,0 +1,71 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "npm: build (all workspaces)",
+      "type": "shell",
+      "command": "npm",
+      "args": ["run", "build"],
+      "isBackground": false,
+      "problemMatcher": {
+        "pattern": {
+          "regexp": "^([^\\(]*\\([^:]*:[^)]*\\):|([^:]*):([^:]*):)\\s*([^:]*):?\\s*(.*)$",
+          "file": 1,
+          "location": 2,
+          "message": 5
+        },
+        "background": {
+          "activeOnStart": false,
+          "beginsPattern": "^npm.*",
+          "endsPattern": ".*"
+        }
+      },
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      }
+    },
+    {
+      "label": "npm: build (extension only)",
+      "type": "shell",
+      "command": "npm",
+      "args": ["run", "build", "--workspace", "packages/vscode-extension"],
+      "isBackground": false,
+      "problemMatcher": "$tsc",
+      "group": "build"
+    },
+    {
+      "label": "esbuild",
+      "type": "process",
+      "command": "node",
+      "args": ["esbuild.js"],
+      "options": {
+        "cwd": "${workspaceFolder}/packages/vscode-extension"
+      },
+      "group": "build",
+      "presentation": {
+        "reveal": "silent"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "npm: watch (extension)",
+      "type": "shell",
+      "command": "npm",
+      "args": ["run", "build", "--", "--watch"],
+      "isBackground": true,
+      "problemMatcher": "$tsc-watch",
+      "group": "build",
+      "presentation": {
+        "reveal": "always"
+      }
+    },
+    {
+      "label": "npm: clean (all workspaces)",
+      "type": "shell",
+      "command": "npm",
+      "args": ["run", "clean"],
+      "group": "build"
+    }
+  ]
+}

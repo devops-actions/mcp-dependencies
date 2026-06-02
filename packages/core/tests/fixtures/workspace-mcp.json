@@ -1,0 +1,18 @@
+{
+  "servers": {
+    "playwright": {
+      "type": "stdio",
+      "command": "npx",
+      "args": ["-y", "@microsoft/mcp-server-playwright"]
+    },
+    "github": {
+      "type": "http",
+      "url": "https://api.githubcopilot.com/mcp"
+    },
+    "pinned-tool": {
+      "type": "stdio",
+      "command": "npx",
+      "args": ["-y", "some-mcp-tool@2.0.0"]
+    }
+  }
+}

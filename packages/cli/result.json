@@ -1,0 +1,151 @@
+{
+  "mcpServers": [
+    {
+      "name": "actions-marketplace",
+      "source": "user",
+      "location": "C:\\Users\\RobBos\\AppData\\Roaming\\Code\\User\\mcp.json",
+      "type": "http",
+      "url": "https://ca-mcp-wsg6po7n4p5dg.ashyplant-207692d4.westeurope.azurecontainerapps.io/mcp",
+      "ecosystem": null,
+      "packageName": null,
+      "version": null
+    },
+    {
+      "name": "azure",
+      "source": "user",
+      "location": "C:\\Users\\RobBos\\AppData\\Roaming\\Code - Insiders\\User\\mcp.json",
+      "type": "http",
+      "url": "http://localhost:8000/adapters/azure/mcp",
+      "ecosystem": null,
+      "packageName": null,
+      "version": null
+    },
+    {
+      "name": "github-code-security",
+      "source": "user",
+      "location": "C:\\Users\\RobBos\\AppData\\Roaming\\Code - Insiders\\User\\mcp.json",
+      "type": "http",
+      "url": "https://api.githubcopilot.com/mcp/x/code_security",
+      "ecosystem": null,
+      "packageName": null,
+      "version": null
+    },
+    {
+      "name": "github/github-mcp-server",
+      "source": "user",
+      "location": "C:\\Users\\RobBos\\AppData\\Roaming\\Code\\User\\mcp.json",
+      "type": "http",
+      "url": "https://api.githubcopilot.com/mcp/",
+      "ecosystem": null,
+      "packageName": null,
+      "version": null
+    },
+    {
+      "name": "io.github.github/github-mcp-server",
+      "source": "user",
+      "location": "C:\\Users\\RobBos\\AppData\\Roaming\\Code\\User\\mcp.json",
+      "type": "http",
+      "url": "https://api.githubcopilot.com/mcp/",
+      "ecosystem": null,
+      "packageName": null,
+      "version": null
+    },
+    {
+      "name": "io.github.github/github-mcp-server",
+      "source": "user",
+      "location": "C:\\Users\\RobBos\\AppData\\Roaming\\Code - Insiders\\User\\mcp.json",
+      "type": "http",
+      "url": "https://api.githubcopilot.com/mcp/",
+      "ecosystem": null,
+      "packageName": null,
+      "version": null
+    },
+    {
+      "name": "io.github.upstash/context7",
+      "source": "user",
+      "location": "C:\\Users\\RobBos\\AppData\\Roaming\\Code - Insiders\\User\\mcp.json",
+      "type": "stdio",
+      "command": "npx",
+      "args": [
+        "@upstash/context7-mcp@1.0.31"
+      ],
+      "ecosystem": "npm",
+      "packageName": "@upstash/context7-mcp",
+      "version": "1.0.31"
+    },
+    {
+      "name": "microsoft-todo",
+      "source": "user",
+      "location": "C:\\Users\\RobBos\\AppData\\Roaming\\Code\\User\\mcp.json",
+      "type": "stdio",
+      "command": "mstodo",
+      "args": [],
+      "ecosystem": null,
+      "packageName": null,
+      "version": null
+    },
+    {
+      "name": "microsoft/playwright-mcp",
+      "source": "user",
+      "location": "C:\\Users\\RobBos\\AppData\\Roaming\\Code\\User\\mcp.json",
+      "type": "stdio",
+      "command": "npx",
+      "args": [
+        "@playwright/mcp@latest"
+      ],
+      "ecosystem": "npm",
+      "packageName": "@playwright/mcp",
+      "version": "latest"
+    },
+    {
+      "name": "microsoftdocs/mcp",
+      "source": "user",
+      "location": "C:\\Users\\RobBos\\AppData\\Roaming\\Code\\User\\mcp.json",
+      "type": "http",
+      "url": "https://learn.microsoft.com/api/mcp",
+      "ecosystem": null,
+      "packageName": null,
+      "version": null
+    },
+    {
+      "name": "ruddr",
+      "source": "user",
+      "location": "C:\\Users\\RobBos\\AppData\\Roaming\\Code\\User\\mcp.json",
+      "type": "stdio",
+      "command": "node",
+      "args": [
+        "C:\\Users\\RobBos\\code\\repos\\xebia\\ruddr-mcp\\dist\\index.js"
+      ],
+      "ecosystem": "npm",
+      "packageName": "C:\\Users\\RobBos\\code\\repos\\xebia\\ruddr-mcp\\dist\\index.js",
+      "version": null
+    },
+    {
+      "name": "upstash/context7",
+      "source": "user",
+      "location": "C:\\Users\\RobBos\\AppData\\Roaming\\Code\\User\\mcp.json",
+      "type": "http",
+      "url": "https://mcp.context7.com/mcp",
+      "ecosystem": null,
+      "packageName": null,
+      "version": null
+    },
+    {
+      "name": "workiq",
+      "source": "user",
+      "location": "C:\\Users\\RobBos\\AppData\\Roaming\\Code\\User\\mcp.json",
+      "type": "stdio",
+      "command": "npx",
+      "args": [
+        "-y",
+        "@microsoft/workiq@latest",
+        "mcp"
+      ],
+      "ecosystem": "npm",
+      "packageName": "@microsoft/workiq",
+      "version": "latest"
+    }
+  ],
+  "otherDependencies": [],
+  "diagnostics": []
+}

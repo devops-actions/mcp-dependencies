@@ -1,0 +1,8 @@
+packages:
+  microsoft/apm-sample-package:
+    version: "v1.0.0"
+    resolved: "https://github.com/microsoft/apm-sample-package"
+    commit: "abc123def456"
+  owner/simple-package:
+    version: "v0.2.1"
+    resolved: "https://github.com/owner/simple-package"

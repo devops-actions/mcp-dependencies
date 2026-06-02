@@ -1,0 +1,66 @@
+{
+  "name": "mcp-dependencies",
+  "displayName": "MCP & APM Dependency Scanner",
+  "description": "Discover MCP server configurations and APM dependencies in your workspace",
+  "version": "0.1.0",
+  "publisher": "devops-actions",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": ["Other"],
+  "keywords": ["mcp", "apm", "dependencies", "dependency graph"],
+  "activationEvents": [
+    "onStartupFinished",
+    "workspaceContains:.vscode/mcp.json",
+    "workspaceContains:apm.yml",
+    "workspaceContains:apm.yaml"
+  ],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "mcp-dependencies.scan",
+        "title": "MCP/APM: Scan Dependencies",
+        "icon": "$(search)"
+      },
+      {
+        "command": "mcp-dependencies.refresh",
+        "title": "MCP/APM: Refresh",
+        "icon": "$(refresh)"
+      }
+    ],
+    "views": {
+      "explorer": [
+        {
+          "id": "mcpDependencies",
+          "name": "MCP & APM Dependencies"
+        }
+      ]
+    },
+    "configuration": {
+      "title": "MCP & APM Dependency Scanner",
+      "properties": {
+        "mcpDependencies.includeGlobal": {
+          "type": "boolean",
+          "default": false,
+          "description": "Also scan global VS Code user config for MCP server definitions"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "clean": "rimraf dist",
+    "package": "vsce package --no-dependencies"
+  },
+  "dependencies": {
+    "@mcp-dependencies/core": "*"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "@types/vscode": "^1.85.0",
+    "esbuild": "^0.25.0",
+    "rimraf": "^5.0.0",
+    "typescript": "^5.5.0"
+  }
+}
