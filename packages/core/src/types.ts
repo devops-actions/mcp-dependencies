@@ -104,6 +104,58 @@ export interface DependencySnapshot {
   manifests: Record<string, SnapshotManifest>;
 }
 
+// ─── MCPSense integration types ────────────────────────────────────────────
+
+/** Severity level as reported by MCPSense */
+export type McpSenseSeverity = "critical" | "high" | "medium" | "low" | "info";
+
+/** Finding category as reported by MCPSense */
+export type McpSenseCategory =
+  | "security"
+  | "spec-compliance"
+  | "tool-quality"
+  | "drift";
+
+/** Location within the target where a finding was detected */
+export interface McpSenseLocation {
+  file?: string;
+  line?: number;
+  tool_name?: string;
+}
+
+/** A single security / quality finding from MCPSense */
+export interface McpSenseFinding {
+  id: string;
+  title: string;
+  description: string;
+  severity: McpSenseSeverity;
+  category: McpSenseCategory;
+  /** OWASP MCP Top 10 mapping, if applicable */
+  owasp?: string;
+  location: McpSenseLocation;
+  remediation: string;
+  diff_old?: string;
+  diff_new?: string;
+}
+
+/** Summary counts returned by MCPSense */
+export interface McpSenseSummary {
+  total: number;
+  by_severity: Partial<Record<McpSenseSeverity, number>>;
+  by_category: Partial<Record<McpSenseCategory, number>>;
+  by_owasp?: Record<string, number>;
+}
+
+/** Full JSON report produced by `mcpsense scan --format json` */
+export interface McpSenseReport {
+  target: string;
+  scan_mode: string;
+  timestamp: string;
+  findings: McpSenseFinding[];
+  score: number;
+  summary: McpSenseSummary;
+}
+
 /** Options for the convert function */
 export interface ConvertOptions {
   /** Repository commit SHA (from GITHUB_SHA or --sha flag) */

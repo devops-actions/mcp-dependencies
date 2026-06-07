@@ -4,6 +4,11 @@ export { parseMcpJson, parseSettingsJsonForMcp } from "./parsers/mcpJson.js";
 export { parseApmYml } from "./parsers/apmYml.js";
 export { parseApmLock } from "./parsers/apmLock.js";
 export { getGlobalMcpJsonPaths, getGlobalSettingsJsonPaths } from "./globalPaths.js";
+export {
+  getMcpSenseVersion,
+  runMcpSenseScan,
+  scanMcpServersWithMcpSense,
+} from "./mcpsense.js";
 export type {
   McpServer,
   OtherDependency,
@@ -17,4 +22,10 @@ export type {
   ApmDependencyType,
   SnapshotDependency,
   SnapshotManifest,
+  McpSenseSeverity,
+  McpSenseCategory,
+  McpSenseLocation,
+  McpSenseFinding,
+  McpSenseSummary,
+  McpSenseReport,
 } from "./types.js";
