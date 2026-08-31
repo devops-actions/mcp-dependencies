@@ -1,0 +1,36 @@
+version: 2
+updates:
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    groups:
+      typescript:
+        patterns:
+          - "typescript"
+          - "@typescript-eslint/*"
+      eslint:
+        patterns:
+          - "eslint"
+          - "eslint-*"
+
+  - package-ecosystem: "npm"
+    directory: "/packages/core"
+    schedule:
+      interval: "weekly"
+    # mcpsense is tracked here as an optionalDependency
+
+  - package-ecosystem: "npm"
+    directory: "/packages/cli"
+    schedule:
+      interval: "weekly"
+
+  - package-ecosystem: "npm"
+    directory: "/packages/vscode-extension"
+    schedule:
+      interval: "weekly"
+
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"

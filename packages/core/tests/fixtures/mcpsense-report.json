@@ -1,0 +1,50 @@
+{
+  "target": "/home/user/.cursor/mcp.json",
+  "scan_mode": "config",
+  "timestamp": "2024-01-01T00:00:00Z",
+  "findings": [
+    {
+      "id": "SEC-014",
+      "title": "Shell metacharacters in config server command",
+      "description": "Command contains shell metacharacters.",
+      "severity": "critical",
+      "category": "security",
+      "owasp": "LLM07",
+      "location": {
+        "file": "/home/user/.cursor/mcp.json",
+        "line": 5,
+        "tool_name": ""
+      },
+      "remediation": "Use only direct binary paths in MCP configs."
+    },
+    {
+      "id": "SEC-016",
+      "title": "Unverified server source",
+      "description": "Unpinned npx package in server command.",
+      "severity": "medium",
+      "category": "security",
+      "owasp": "LLM09",
+      "location": {
+        "file": "/home/user/.cursor/mcp.json",
+        "line": 3,
+        "tool_name": ""
+      },
+      "remediation": "Pin the package to a specific version."
+    }
+  ],
+  "score": 75,
+  "summary": {
+    "total": 2,
+    "by_severity": {
+      "critical": 1,
+      "medium": 1
+    },
+    "by_category": {
+      "security": 2
+    },
+    "by_owasp": {
+      "LLM07": 1,
+      "LLM09": 1
+    }
+  }
+}
