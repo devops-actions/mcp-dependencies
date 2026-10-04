@@ -21,3 +21,7 @@ updates:
         update-types:
           - "minor"
           - "patch"
+    ignore:
+      # typescript-eslint v8 only supports typescript <6.1. Remove once it supports newer versions.
+      - dependency-name: "typescript"
+        versions: [">=6.1.0"]
