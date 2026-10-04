@@ -61,6 +61,6 @@
     "@types/vscode": "^1.138.0",
     "esbuild": "^0.28.2",
     "rimraf": "^5.0.0",
-    "typescript": "^5.5.0"
+    "typescript": "^7.0.2"
   }
 }
