@@ -58,8 +58,8 @@
   },
   "devDependencies": {
     "@types/node": "^20.0.0",
-    "@types/vscode": "^1.85.0",
-    "esbuild": "^0.28.1",
+    "@types/vscode": "^1.138.0",
+    "esbuild": "^0.28.2",
     "rimraf": "^5.0.0",
     "typescript": "^5.5.0"
   }
