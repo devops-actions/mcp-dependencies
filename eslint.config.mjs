@@ -18,6 +18,8 @@ export default [
     },
     rules: {
       ...tsPlugin.configs.recommended.rules,
+      // TypeScript already checks undefined identifiers; no-undef misfires on Node globals in .ts files.
+      "no-undef": "off",
       "@typescript-eslint/no-unused-vars": ["error", { argsIgnorePattern: "^_" }],
     },
   },
